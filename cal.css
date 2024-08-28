@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+body{
+    font-family:'Inter', sans-serif;
+    background:linear-gradient(to bottom left, black, blue,black);
+    height: 150vh;
+    color: white;
+}
+h3{
+    text-align: center;
+    height: 40px;
+    width: 300px;
+    background-color: blue;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.calculator{
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+    border: 10px solid black;
+    padding-bottom: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px black;
+    font-family: 'orbitron';
+}
+.screen{
+    min-height: 120px;
+    height: auto;
+    width: 400px;
+    background-color: rgba(124, 243, 111, 0.5); /* rgba(85, 230, 69, 0.5) */
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: inset 0 0 20px -5px rgb(53, 239, 53) ;
+    color: black;
+    font-size: larger;
+}
+.currentvalue{
+    height: 50px;
+    word-break: break-all;
+    overflow: auto;
+    scrollbar-width: none;
+    position: absolute;
+    margin: 10px;
+    top: 70px;
+    right: 20px;
+}
+.currentvalue::before{
+    content: '';
+    height: 30px;
+    width: 2px;
+    display: inline-block;
+    position: sticky;
+    left: 500px; 
+    opacity: 1;
+    animation: pin 500ms ease-in-out infinite normal;
+}
+@keyframes pin{
+    from{background-color: transparent;}
+    to{background-color: rgb(21, 75, 21);}
+}
+.calculatevalue{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    word-break: break-all;
+    overflow: auto;
+    opacity: 0.8;
+    margin-left: 20px;
+}
+.keys{
+    display: grid;
+    grid-template: repeat(5, 80px)/ repeat(4,80px);
+    background-color: black;
+    column-gap: 27px;
+    margin-top: 5px;
+}
+.keys .cross div{
+font-size:20px;
+color: white;
+box-shadow: none;
+background-color: black;
+border-radius: 0;
+height: 20px;
+width: 25px;
+margin: auto;
+position: relative;
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+}
+.keys .cross div::before, .keys .cross div::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+}
+ .keys .cross div::before{
+    transform: skew(-45deg);
+    transform-origin: top left;
+}  
+.keys .cross div::after{
+    transform: skew(45deg);
+    transform-origin: bottom left;
+    top: 10px;
+}  
+
+.keys *{
+    background-color: rgba(246, 247, 237, 0.82);
+    border-radius: 50%;
+    border: none;
+    margin: 2px;
+    box-shadow: inset 0 0 3px black;
+    font-size: 30px;
+    transition: border-radius 0.2s;
+}
+.ac, .brackets, .per, .multiply, .div, .plus, .minus, .equal{
+    background-color: orange;
+}
+.keys *:hover{
+    border-radius: 10px;
+}
